@@ -18,7 +18,18 @@ AWESOMENESS = [
 def start_here():
     """Home page."""
 
-    return "<!doctype html><html>Hi! This is the home page.</html>"
+    return """
+    <!doctype html>
+    <html>
+      
+        
+     
+      <body>
+      <h1>Hi! This is the home page.</h1>
+        <a href="/hello">Hello There</a>
+      </body>
+    </html>
+    """
 
 
 @app.route("/hello")
@@ -36,6 +47,24 @@ def say_hello():
         <form action="/greet">
           What's your name? <input type="text" name="person">
           <input type="submit" value="Submit">
+        </form>
+        <form>
+          <select name="compliment">
+            <option value="awesome">Awesome</option>
+            <option value="terrific">Terrific</option>
+            <option value="fantastic">Fantastic</option>
+            <option value="neato">Neato</option>
+            <option value="fantabulous">Fantabulous</option>
+            <option value="wowza">Wowza</option>
+            <option value="oh-so-not-meh>Oh-so-not-meh</option>
+            <option value="wonderful">Wonderful</option>
+            <option value="brilliant">Brillant</option>
+            <option value="ducky">Ducky</option>
+            <option value="coolio">Coolio</option>
+            <option value="incredible">Incredible</option>
+            <option value="smashing">Smashing</option>
+            <option value="lovely">Lovely</option>
+          </select>
         </form>
       </body>
     </html>
@@ -68,4 +97,4 @@ def greet_person():
 if __name__ == "__main__":
     # debug=True gives us error messages in the browser and also "reloads"
     # our web app if we change the code.
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")
